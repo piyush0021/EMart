@@ -18,5 +18,4 @@ public class InvoiceDtlServiceImpl implements InvoiceDtlService {
 	public Optional<Invoice> getInvoiceDtl(int id) {
 		return repository.findById(id);
 	}
-
 }
