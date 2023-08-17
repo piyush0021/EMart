@@ -9,5 +9,7 @@ import com.example.entities.Category;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer>{
-	List<Category> findByName(String cName);
+	
+	List<Category> findBycategoryName(String cName);
+	
 }

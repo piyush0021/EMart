@@ -14,14 +14,17 @@ public class CategoryServiceImpl implements CategoryService{
 
 	@Autowired
 	private CategoryRepository c_repository;
+	
 	@Override
 	public List<Category> getCategories() {
 		return c_repository.findAll();
 	}
+	
 	@Override
 	public List<Category> getCategoryByName(String cName) {
-		return c_repository.findByName(cName);
+		return c_repository.findBycategoryName(cName);
 	}
+	
 	@Override
 	public Optional<Category> getCategoryById(int cId) {
 		return c_repository.findById(cId);

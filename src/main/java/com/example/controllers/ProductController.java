@@ -21,7 +21,7 @@ public class ProductController {
 	public List<Product> getAllProducts(){
 		return p_service.getAllProducts();
 	}
-	
+	//shdfkjj
 	@GetMapping(value = "api/getProductsByName/{pName}")
 	public List<Product> getProductsByName(@PathVariable String pName){
 		return p_service.getAllProductsByName(pName);

@@ -17,7 +17,7 @@ public class CategoryController {
 	@Autowired
 	private CategoryService cat_service;
 	
-	@GetMapping(value="api/getCatergories")
+	@GetMapping(value="api/getCategories")
 	public List<Category> getCategories(){
 		return cat_service.getCategories();
 	}
