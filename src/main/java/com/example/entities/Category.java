@@ -17,14 +17,14 @@ import jakarta.persistence.Table;
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="catmasterID")
-	private int catmasterID;
+	@Column(name="catmaster_Id")
+	private int catmaster_Id;
 	
-	@Column(name="cat_id")
-	private String cat_id;
+	@Column(name="cat_Id")
+	private String cat_Id;
 	
-	@Column(name="subcat_id")
-	private String subcat_id;
+	@Column(name="subcat_Id")
+	private String subcat_Id;
 	
 	@Column(name="categoryName")
 	private String categoryName;
@@ -36,44 +36,44 @@ public class Category {
 	private String catImgPath;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "catmaster_Id",referencedColumnName = "catmasterID")
+	@JoinColumn(name = "catmaster_Id",referencedColumnName = "catmaster_ID")
 	private Set<Product> products;
 
 	public Category() {
 		super();
 	}
 
-	public Category(String cat_id, String subcat_id, String categoryName, boolean flag, String catImgPath) {
+	public Category(String cat_Id, String subcat_Id, String categoryName, boolean flag, String catImgPath) {
 		super();
-		this.cat_id = cat_id;
-		this.subcat_id = subcat_id;
+		this.cat_Id = cat_Id;
+		this.subcat_Id = subcat_Id;
 		this.categoryName = categoryName;
 		this.flag = flag;
 		this.catImgPath = catImgPath;
 	}
 
-	public int getCatmasterID() {
-		return catmasterID;
+	public int getcatmaster_Id() {
+		return catmaster_Id;
 	}
 
-	public void setCatmasterID(int catmasterID) {
-		this.catmasterID = catmasterID;
+	public void setcatmaster_Id(int catmaster_Id) {
+		this.catmaster_Id = catmaster_Id;
 	}
 
-	public String getCat_id() {
-		return cat_id;
+	public String getcat_Id() {
+		return cat_Id;
 	}
 
-	public void setCat_id(String cat_id) {
-		this.cat_id = cat_id;
+	public void setcat_Id(String cat_Id) {
+		this.cat_Id = cat_Id;
 	}
 
-	public String getSubcat_id() {
-		return subcat_id;
+	public String getSubcat_Id() {
+		return subcat_Id;
 	}
 
-	public void setSubcat_id(String subcat_id) {
-		this.subcat_id = subcat_id;
+	public void setSubcat_Id(String subcat_Id) {
+		this.subcat_Id = subcat_Id;
 	}
 
 	public String getCategoryName() {
@@ -102,7 +102,7 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Category [catmasterID=" + catmasterID + ", cat_id=" + cat_id + ", subcat_id=" + subcat_id
+		return "Category [catmaster_Id=" + catmaster_Id + ", cat_Id=" + cat_Id + ", subcat_Id=" + subcat_Id
 				+ ", categoryName=" + categoryName + ", flag=" + flag + ", catImgPath=" + catImgPath + "]";
 	}
 	

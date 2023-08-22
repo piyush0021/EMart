@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -21,18 +22,18 @@ public class Invoice_Details {
 	@Column(name="mrp")
 	private double mrp;
 	
-	@Column(name = "card_holder_price")
-	private double card_holder_price;
+	@Column(name = "cardHolderPrice")
+	private double cardHolderPrice;
 
-	@Column(name = "points reedemed")
-	private int points_reedemed;
+	@Column(name = "pointsReedemed")
+	private int pointsReedemed;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "inv_Id",referencedColumnName = "inv_Id")
 	private Invoice invoice;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "prod_id",referencedColumnName = "prod_id")
+	@JoinColumn(name = "prod_Id",referencedColumnName = "prod_Id")
 	private Product product;
 
 	public Invoice_Details() {
@@ -40,12 +41,13 @@ public class Invoice_Details {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Invoice_Details( double mrp, double card_holder_price, int points_reedemed, Invoice invoice,
-			Product product) {
+	public Invoice_Details(double mrp, double cardHolderPrice, int pointsReedemed, Invoice invoice, Product product) {
 		super();
 		this.mrp = mrp;
-		this.card_holder_price = card_holder_price;
-		this.points_reedemed = points_reedemed;
+		this.cardHolderPrice = cardHolderPrice;
+		this.pointsReedemed = pointsReedemed;
+		this.invoice = invoice;
+		this.product = product;
 	}
 
 	public int getInvdtl_Id() {
@@ -64,20 +66,20 @@ public class Invoice_Details {
 		this.mrp = mrp;
 	}
 
-	public double getCard_holder_price() {
-		return card_holder_price;
+	public double getCardHolderPrice() {
+		return cardHolderPrice;
 	}
 
-	public void setCard_holder_price(double card_holder_price) {
-		this.card_holder_price = card_holder_price;
+	public void setCardHolderPrice(double cardHolderPrice) {
+		this.cardHolderPrice = cardHolderPrice;
 	}
 
-	public int getPoints_reedemed() {
-		return points_reedemed;
+	public int getPointsReedemed() {
+		return pointsReedemed;
 	}
 
-	public void setPoints_reedemed(int points_reedemed) {
-		this.points_reedemed = points_reedemed;
+	public void setPointsReedemed(int pointsReedemed) {
+		this.pointsReedemed = pointsReedemed;
 	}
 
 	public Invoice getInvoice() {
@@ -95,8 +97,7 @@ public class Invoice_Details {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
-	
 
+	
 }
 

@@ -16,6 +16,7 @@ import com.example.entities.Product;
 import com.example.services.AuthenticationService;
 
 @RestController  
+@CrossOrigin("*")
 public class AuthenticationController {
 	
 	@Autowired
@@ -25,6 +26,12 @@ public class AuthenticationController {
 	public Optional<Authentication> getPro(@PathVariable int auth_id)
 	{
 		return auth_service.getAuthentication(auth_id);
+	}
+	
+	@PostMapping(value = "api/addAuthentication")
+	public void addAuthentication(@RequestBody Authentication authentication) {
+		System.out.println("helllo react");
+		auth_service.addAuthentication(authentication);
 	}
 	
 }

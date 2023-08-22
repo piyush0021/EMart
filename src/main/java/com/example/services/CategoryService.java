@@ -7,6 +7,7 @@ import com.example.entities.Category;
 
 public interface CategoryService {
 	List<Category> getCategories();
+	List<Category> getMainCategories();
 	List<Category> getCategoryByName(String cName);
 	Optional<Category> getCategoryById(int cId);
 }

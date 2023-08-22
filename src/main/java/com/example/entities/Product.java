@@ -15,22 +15,22 @@ import jakarta.persistence.Table;
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="Prod_Id")
+	@Column(name="prod_id")
 	private int prod_id;
 	
-	@Column (name="ProdShortDesc")
-	private String prodShortDesc;
+	@Column (name="prodName")
+	private String prodName;
 
-	@Column (name="prodLongDesc")
-	private String prodLongDesc;
+	@Column (name="prodDescription")
+	private String prodDescription;
 	
-	@Column (name="MrpPrice")
+	@Column (name="mrpPrice")
 	private double mrpPrice;
 	
-	@Column (name="CardHoldersPrice")
+	@Column (name="cardholdersPrice")
 	private double cardholdersPrice;
 	
-	@Column (name="PointsToBeRedm")
+	@Column (name="pointsToBeRedm")
 	private int pointsToBeRedm;
 
 	public Product() {
@@ -38,11 +38,11 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(String prodShortDesc, String prodLongDesc, double mrpPrice, double cardholdersPrice,
+	public Product(String prodName, String prodDescription, double mrpPrice, double cardholdersPrice,
 			int pointsToBeRedm) {
 		super();
-		this.prodShortDesc = prodShortDesc;
-		this.prodLongDesc = prodLongDesc;
+		this.prodName = prodName;
+		this.prodDescription = prodDescription;
 		this.mrpPrice = mrpPrice;
 		this.cardholdersPrice = cardholdersPrice;
 		this.pointsToBeRedm = pointsToBeRedm;
@@ -56,20 +56,20 @@ public class Product {
 		this.prod_id = prod_id;
 	}
 
-	public String getProdShortDesc() {
-		return prodShortDesc;
+	public String getProdName() {
+		return prodName;
 	}
 
-	public void setProdShortDesc(String prodShortDesc) {
-		this.prodShortDesc = prodShortDesc;
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
 	}
 
-	public String getProdLongDesc() {
-		return prodLongDesc;
+	public String getProdDescription() {
+		return prodDescription;
 	}
 
-	public void setProdLongDesc(String prodLongDesc) {
-		this.prodLongDesc = prodLongDesc;
+	public void setProdDescription(String prodDescription) {
+		this.prodDescription = prodDescription;
 	}
 
 	public double getMrpPrice() {
@@ -96,12 +96,7 @@ public class Product {
 		this.pointsToBeRedm = pointsToBeRedm;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [prod_id=" + prod_id + ", prodShortDesc=" + prodShortDesc
-				+ ", prodLongDesc=" + prodLongDesc + ", mrpPrice=" + mrpPrice + ", cardholdersPrice=" + cardholdersPrice
-				+ ", pointsToBeRedm=" + pointsToBeRedm + "]";
-	}
+	
 	
 	
 }

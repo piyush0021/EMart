@@ -15,44 +15,49 @@ import jakarta.persistence.Table;
 public class Product_Details {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Prod_Dtl_Id") 
-	private int prod_Dtl_id;
+	@Column(name = "prodDtl_Id") 
+	private int prodDtl_Id;
 	
-	@Column(name = "Config_Dtls")
-	private int config_Dtls;
+	@Column(name = "configDtls")
+	private int configDtls;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "configID",referencedColumnName = "configID")
+	@JoinColumn(name = "config_Id",referencedColumnName = "config_Id")
 	private Config config;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "prod_id",referencedColumnName = "prod_id")
+	@JoinColumn(name = "prod_Id",referencedColumnName = "prod_Id")
 	private Product product;
 	
 	public Product_Details() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Product_Details(int prod_Dtl_id, int config_Dtls) {
+	
+	public Product_Details(int configDtls, Config config, Product product) {
 		super();
-		this.prod_Dtl_id = prod_Dtl_id;
-		this.config_Dtls = config_Dtls;
+		this.configDtls = configDtls;
+		this.config = config;
+		this.product = product;
 	}
-	 
-	public int getProd_Dtl_id() {
-		return prod_Dtl_id;
-	}
-	public void setProd_Dtl_id(int prod_Dtl_id) {
-		this.prod_Dtl_id = prod_Dtl_id;
-	}
+
 	
-	
-	public int getConfig_Dtls() {
-		return config_Dtls;
+	public int getProdDtl_Id() {
+		return prodDtl_Id;
 	}
-	public void setConfig_Dtls(int config_Dtls) {
-		this.config_Dtls = config_Dtls;
+
+	public void setProdDtl_Id(int prodDtl_Id) {
+		this.prodDtl_Id = prodDtl_Id;
 	}
+
+	public int getConfigDtls() {
+		return configDtls;
+	}
+
+	public void setConfigDtls(int configDtls) {
+		this.configDtls = configDtls;
+	}
+
 	public Config getConfig() {
 		return config;
 	}

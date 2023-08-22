@@ -29,5 +29,10 @@ public class CategoryServiceImpl implements CategoryService{
 	public Optional<Category> getCategoryById(int cId) {
 		return c_repository.findById(cId);
 	}
+
+	@Override
+	public List<Category> getMainCategories() {
+		return c_repository.findBysubcatIdIsNull();
+	}
 	
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,10 +13,16 @@ import com.example.entities.Category;
 import com.example.services.CategoryService;
 
 @RestController
+@CrossOrigin("*")
 public class CategoryController {
 	
 	@Autowired
 	private CategoryService cat_service;
+	
+	@GetMapping(value="api/getMainCategories")
+	public List<Category> getMainCategories(){
+		return cat_service.getMainCategories();
+	}
 	
 	@GetMapping(value="api/getCategories")
 	public List<Category> getCategories(){

@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 public class Config {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ConfigID")
-	private int configID;
+	@Column(name="config_Id")
+	private int config_Id;
 	
 	@Column(name="ConfigName",nullable = false)
 	private String configName;
@@ -27,12 +27,12 @@ public class Config {
 		this.configName = configName;
 	}
 
-	public int getConfigID() {
-		return configID;
+	public int getconfig_Id() {
+		return config_Id;
 	}
 
-	public void setConfigID(int configID) {
-		this.configID = configID;
+	public void setconfig_Id(int config_Id) {
+		this.config_Id = config_Id;
 	}
 
 	public String getConfigName() {
@@ -45,7 +45,7 @@ public class Config {
 
 	@Override
 	public String toString() {
-		return "Config [configID=" + configID + ", configName=" + configName + "]";
+		return "Config [config_Id=" + config_Id + ", configName=" + configName + "]";
 	}
 	
 	

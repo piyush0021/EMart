@@ -18,5 +18,10 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	public Optional<Authentication> getAuthentication(int Auth_id) {
 		return auth_repo.findById(Auth_id);
 	}
+
+	@Override
+	public void addAuthentication(Authentication authentication) {
+		auth_repo.save(authentication);		
+	}
 	
 }

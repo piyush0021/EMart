@@ -7,8 +7,8 @@ import jakarta.persistence.*;
 public class Authentication {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="auth_id")
-	private int auth_id;
+	@Column(name="auth_Id")
+	private int auth_Id;
 			
 	@Column(name="uname")
 	private String uname;
@@ -22,22 +22,21 @@ public class Authentication {
 
 	public Authentication() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Authentication(int auth_id, String uname, String pass) {
+	public Authentication(int auth_Id, String uname, String pass) {
 		super();
-		this.auth_id = auth_id;
+		this.auth_Id = auth_Id;
 		this.uname = uname;
 		this.pass = pass;
 	}
 
-	public int getAuth_id() {
-		return auth_id;
+	public int getauth_Id() {
+		return auth_Id;
 	}
 
-	public void setAuth_id(int auth_id) {
-		this.auth_id = auth_id;
+	public void setauth_Id(int auth_Id) {
+		this.auth_Id = auth_Id;
 	}
 
 	public String getUname() {

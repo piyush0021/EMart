@@ -7,30 +7,30 @@ import jakarta.persistence.*;
 public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Cart_Id")
+	@Column(name = "cart_Id")
 	private int cart_Id;
 	
-	@Column(name = "Quantity")
+	@Column(name = "quantity")
 	private int quantity;
 	
-	@Column(name = "Price")
+	@Column(name = "price")
 	private double price;
 	
-	@Column(name = "Delivery_Charges")
+	@Column(name = "delivery_Charges")
 	private double delivery_Charges;
 	
-	@Column(name = "Discount")
+	@Column(name = "discount")
 	private double discount;
 	
-	@Column(name = "Total")
+	@Column(name = "total")
 	private double total;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Cust_Id",referencedColumnName = "cust_Id")
+	@JoinColumn(name = "cust_Id",referencedColumnName = "cust_Id")
 	public Customer customer;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "prod_id",referencedColumnName = "prod_id")
+	@JoinColumn(name = "prod_Id",referencedColumnName = "prod_Id")
 	private Product product;
 
 	public Cart() {

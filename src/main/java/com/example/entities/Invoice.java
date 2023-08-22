@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,17 +16,18 @@ public class Invoice {
 	@Column(name="inv_Id")
     private int inv_Id; 
 	
-	@Column(name="InvDt")
+	@Column(name="invDt")
     private String invDt;
 	
-	@Column(name="TotalAmt")
+	@Column(name="totalAmt")
     private double totalAmt;
 	
-	@Column(name="Tax")
+	@Column(name="tax")
     private double tax;
 	
-	@Column(name="PayableAmt")
+	@Column(name="payableAmt")
     private double payableAmt;
+	
 
     public Invoice() {
         super();

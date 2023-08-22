@@ -9,49 +9,42 @@ import jakarta.persistence.*;
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Cust_Id")
+	@Column(name = "cust_Id")
 	private int cust_Id;
 	
-	@Column(name = "Cust_Name")
-	private String cust_Name;
+	@Column(name = "custName")
+	private String custName;
 	
-	@Column(name = "Phone_No")
-	private long phone_No;
+	@Column(name = "phoneNo")
+	private long phoneNo;
 	
-	@Column(name = "Email")
+	@Column(name = "email")
 	private String email;
 	
-	@Column(name = "Gender")
+	@Column(name = "gender")
 	private char gender;
 	
-	@Column(name = "Redeem_Points")
-	private int redeem_points;
+	@Column(name = "redeemPoints")
+	private int redeemPoints;
 	
-	@Column(name = "AddLine1")
-	private String addline1;
+	@Column(name = "addLine1")
+	private String addLine1;
 	
-	@Column(name = "AddLine2")
-	private String addline2;
+	@Column(name = "addLine2")
+	private String addLine2;
 	
-	@Column(name = "City")
+	@Column(name = "city")
 	private String city;
 	
-	@Column(name = "Pincode")
+	@Column(name = "pincode")
 	private long pincode;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "cust_Id" , referencedColumnName = "cust_Id")
 	private Set<Invoice> invoices;
 	
-
-	
-	/*
-	 * @OneToOne(cascade = CascadeType.ALL)
-	 * 
-	 * @JoinColumn(name = "cust_id", referencedColumnName = "cust_Id") private
-	 * Authentication authentication;
-	 */
-	
+	@OneToOne
+	private Authentication authentication;	
 	
 	public Customer() {
 		super();
@@ -59,16 +52,16 @@ public class Customer {
 	}
 	
 	public Customer(int cust_Id, String cust_Name, long phone_No, String email, char gender, int redeem_points,
-			String addline1, String addline2, String city, long pincode) {
+			String addLine1, String addLine2, String city, long pincode) {
 		super();
 		this.cust_Id = cust_Id;
-		this.cust_Name = cust_Name;
-		this.phone_No = phone_No;
+		this.custName = cust_Name;
+		this.phoneNo = phone_No;
 		this.email = email;
 		this.gender = gender;
-		this.redeem_points = redeem_points;
-		this.addline1 = addline1;
-		this.addline2 = addline2;
+		this.redeemPoints = redeem_points;
+		this.addLine1 = addLine1;
+		this.addLine2 = addLine2;
 		this.city = city;
 		this.pincode = pincode;
 	}
@@ -82,17 +75,17 @@ public class Customer {
 	}
 	
 	public String getCust_Name() {
-		return cust_Name;
+		return custName;
 	}
 	public void setCust_Name(String cust_Name) {
-		this.cust_Name = cust_Name;
+		this.custName = cust_Name;
 	}
 	
 	public long getPhone_No() {
-		return phone_No;
+		return phoneNo;
 	}
 	public void setPhone_No(long phone_No) {
-		this.phone_No = phone_No;
+		this.phoneNo = phone_No;
 	}
 	
 	public String getEmail() {
@@ -110,24 +103,24 @@ public class Customer {
 	}
 	
 	public int getRedeem_points() {
-		return redeem_points;
+		return redeemPoints;
 	}
 	public void setRedeem_points(int reedeem_points) {
-		this.redeem_points = reedeem_points;
+		this.redeemPoints = reedeem_points;
 	}
 	
-	public String getAddline1() {
-		return addline1;
+	public String getaddLine1() {
+		return addLine1;
 	}
-	public void setAddline1(String addline1) {
-		this.addline1 = addline1;
+	public void setaddLine1(String addLine1) {
+		this.addLine1 = addLine1;
 	}
 	
-	public String getAddline2() {
-		return addline2;
+	public String getaddLine2() {
+		return addLine2;
 	}
-	public void setAddline2(String addline2) {
-		this.addline2 = addline2;
+	public void setaddLine2(String addLine2) {
+		this.addLine2 = addLine2;
 	}
 	
 	public String getCity() {

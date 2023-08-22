@@ -15,8 +15,8 @@ public class CustomerServiceImpl implements CustomerService{
 	private CustomerRepository c_repository;
 	
 	@Override
-	public void save(Customer customer) {
-		c_repository.save(customer);
+	public void update(Customer c,int cust_id) {
+		c_repository.updateCustomer(cust_id, c.getaddLine1(),c.getaddLine1(),c.getCity(),c.getCust_Name(),c.getEmail(),c.getGender(),c.getPhone_No(),c.getPincode(),c.getRedeem_points());
 	}
 
 	@Override
@@ -24,5 +24,9 @@ public class CustomerServiceImpl implements CustomerService{
 		return c_repository.findById(cId);
 	}
 
-
+	@Override
+	public void addCustomer(Customer customer) {
+		c_repository.save(customer);	
+		
+	}
 }

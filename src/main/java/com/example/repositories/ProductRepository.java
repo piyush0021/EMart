@@ -9,5 +9,5 @@ import com.example.entities.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer>{
-	 List<Product> findByProdShortDesc(String desc);
+	 List<Product> findByProdName(String desc);
 }
