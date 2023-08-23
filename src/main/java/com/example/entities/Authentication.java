@@ -17,7 +17,7 @@ public class Authentication {
 	private String pass;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Cust_Id",referencedColumnName = "cust_Id")
+	@JoinColumn(name = "cust_Id",referencedColumnName = "cust_Id")
 	public Customer customer;
 
 	public Authentication() {

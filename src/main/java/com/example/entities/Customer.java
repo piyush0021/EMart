@@ -1,5 +1,6 @@
 package com.example.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.*;
@@ -43,8 +44,9 @@ public class Customer {
 	@JoinColumn(name = "cust_Id" , referencedColumnName = "cust_Id")
 	private Set<Invoice> invoices;
 	
-	@OneToOne
-	private Authentication authentication;	
+//	@ManyToMany(cascade = CascadeType.ALL)
+//	private List<Cart> carts;
+	
 	
 	public Customer() {
 		super();

@@ -19,9 +19,9 @@ public class CategoryController {
 	@Autowired
 	private CategoryService cat_service;
 	
-	@GetMapping(value="api/getMainCategories")
-	public List<Category> getMainCategories(){
-		return cat_service.getMainCategories();
+	@GetMapping(value="api/getCategoryBySubcatId/{subcatId}")
+	public List<Category> getCategoryBySubcatId(@PathVariable String subcatId){
+		return cat_service.getCategoryBySubcatId(subcatId);
 	}
 	
 	@GetMapping(value="api/getCategories")

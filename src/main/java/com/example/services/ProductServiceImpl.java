@@ -23,7 +23,7 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public List<Product> getAllProductsByName(String desc) {
-		return p_repository.findByProdShortDesc(desc);
+		return p_repository.findByProdName(desc);
 	}
 
 	@Override

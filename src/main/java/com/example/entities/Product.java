@@ -1,5 +1,7 @@
 package com.example.entities;
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -15,8 +18,8 @@ import jakarta.persistence.Table;
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="prod_id")
-	private int prod_id;
+	@Column(name="prod_Id")
+	private int prod_Id;
 	
 	@Column (name="prodName")
 	private String prodName;
@@ -32,6 +35,12 @@ public class Product {
 	
 	@Column (name="pointsToBeRedm")
 	private int pointsToBeRedm;
+	
+	@Column(name = "prodImg")
+	private String prodImg;
+	
+//	@ManyToMany(cascade = CascadeType.ALL)
+//	private List<Cart> carts;
 
 	public Product() {
 		super();
@@ -49,11 +58,11 @@ public class Product {
 	}
 
 	public int getProd_id() {
-		return prod_id;
+		return prod_Id;
 	}
 
 	public void setProd_id(int prod_id) {
-		this.prod_id = prod_id;
+		this.prod_Id = prod_id;
 	}
 
 	public String getProdName() {

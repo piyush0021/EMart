@@ -32,7 +32,7 @@ public class Category {
 	@Column(name="flag")
 	private boolean flag;
 	
-	@Column(name= "catImgPath",nullable = false)
+	//@Column(name= "catimgpath",nullable = false)
 	private String catImgPath;
 	
 	@OneToMany(cascade = CascadeType.ALL)

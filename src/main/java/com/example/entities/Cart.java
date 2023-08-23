@@ -1,5 +1,7 @@
 package com.example.entities;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -32,6 +34,16 @@ public class Cart {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "prod_Id",referencedColumnName = "prod_Id")
 	private Product product;
+	
+//	@ManyToMany(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "cust_Id",referencedColumnName = "cust_Id")
+//	private List<Customer> customers;
+//	
+//	@ManyToMany(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "prod_Id",referencedColumnName = "prod_Id")
+//	private List<Product> products;
+	
+	
 
 	public Cart() {
 		super();
@@ -103,12 +115,5 @@ public class Cart {
 	}
 	
 	
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
 		
 }
